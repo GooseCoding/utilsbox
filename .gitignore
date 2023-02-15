@@ -1,0 +1,43 @@
+# 扩展
+*.bak
+*.patch
+*.diff
+*.err
+
+# git冲突合并的临时文件
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.zip
+*.vi
+*~
+*.sass-cache
+*.tmp.html
+*.dump
+
+# 操作系统或编辑器文件夹
+.DS_Store
+._*
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+*.sublime-project
+*.sublime-workspace
+nbproject
+thumbs.db
+*.iml
+
+# 忽略的文件夹
+.hg
+.svn
+.CVS
+.idea
+node_modules/
+jscoverage_lib/
+bower_components/
+dist/
+build/
