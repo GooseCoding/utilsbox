@@ -195,6 +195,8 @@ export default class TemplateModal extends Component {
                         return;
                     }
 
+                    console.log('this.addingClassify', this.addingClassify)
+
                     if (stringUtils.isEmptyByObj(this.addingClassify, ['classify', 'title']) === true) {
                         message.warning('编码和名称都不可空');
                         return;
@@ -217,7 +219,7 @@ export default class TemplateModal extends Component {
                     <div style={{ ...Css.transverse, marginTop: 15 }}>
                         <span style={{ width: 130 }}>唯一编码：</span>
                         <Input placeholder='例如：biz_service_impl' onChange={(e) => {
-                            this.addingClassify.code = e.currentTarget.value;
+                            this.addingClassify.classify = e.currentTarget.value;
                         }} />
                     </div>
                 </div>
