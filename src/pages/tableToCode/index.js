@@ -272,4 +272,32 @@ export default class TableToCodeUtils extends Component {
         this.addHistory();
         refresh(this);
     }
+
+
+    /** 导入模版逻辑 */
+    importTemplate = () => {
+        localUtils.importFile(
+            (json) => {
+                let config;
+                try {
+                    config = JSON.parse(json);
+                } catch { }
+
+                if (!config) {
+                    message.warning('解析失败，请检查文件内容是否正确');
+                    return;
+                }
+
+                // 设置解析结果
+                this.codeTemplates = config;
+                if (this.codeTemplates.length > 0) {
+                    localStorage.setItem(CODE_TEMPLATE_CONFIG_KEY, JSON.stringify(this.codeTemplates));
+                    message.success('导入成功');
+                }
+            },
+            (res) => {
+                message.warning(res.errorMessage);
+            }
+        );
+    }
 }
